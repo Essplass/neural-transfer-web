@@ -1,0 +1,77 @@
+<!doctype html>
+<div style ="text-align:center;">
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-danger" style ="font-weight: bold; color: red;">{{ message }}</div>
+{% endfor %}
+  </div>
+<head>
+<title>Upload new File</title>
+  <style>
+    body {
+  font-family: Courier New;
+  background-color: #f4f4f4;
+}
+
+h1,h2,p,h3 {
+  text-align: center;
+  color: #333;
+  margin: 30px 0;
+}
+
+form {
+font-family: Courier New;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+form select,
+form input[type="file"],
+form input[type="submit"] {
+font-family: Courier New;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form input[type="submit"] {
+font-family: Courier New;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+  </style>
+  </head>
+<h1>Neural style transfer</h1>
+<form method=post enctype=multipart/form-data>
+  <select name="dropdown">
+    <option value="1">Lichenstein</option>
+    <option value="2">Monet</option>
+    <option value="3">Vangogh</option>
+    <option value="4">Andy Warhol</option>
+    <option value="5">Da vinci</option>
+    <option value="6">Picasso</option>
+    <option value="7">Salvador Dali</option>
+    <option value="8">Banksy</option>
+  </select>
+  <input type=file name=file>
+  <input type=submit value=Upload>
+</form>
+<h2> How to use! </h2>
+<p>1 &#x2022; Select an artstyle from the dropdown box at the top</p>
+<p>2 &#x2022; Next, select a JPG or PNG image from your local machine, note unsupported files will not work and you will
+    be prompted with an error at the top center of the page</p>
+<p>3 &#x2022; Press the green upload button to upload your work into the deep learning model </p>
+<p>4 &#x2022; You will be redirected to a webpage with your edited image, the style transfer is complete</p>
+<p>5 &#x2022; To return to the upload page simply press the green button</p>
+<h3> Created by Samuel Ford 2023</h3>
