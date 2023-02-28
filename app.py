@@ -21,12 +21,6 @@ def allowed_file(filename):
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 
-# The upload file code, three checks are performed.
-# 1. Has a file been uploaded.
-# 2. Handle empty file names.
-# 3. check that file extension is valid.
-# If all conditions are met, the file is successfully uploaded and passed to the stylise function on line 48.
-# Once stylisation is complete, the user is redirected to an uploaded page where they can view there edited upload.
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
@@ -34,12 +28,13 @@ def upload_file():
         if 'file' not in request.files:
             flash('No file part')
             return redirect(request.url)
+
         file = request.files['file']
-        # If user does not select file, browser also
-        # submits an empty part without filename
+        # If user does not select file, browser also submits an empty part without filename
         if file.filename == '':
             flash('No selected file')
             return redirect(request.url)
+
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
@@ -47,9 +42,10 @@ def upload_file():
             dropdown_value = request.form.get('dropdown')
             stylise(newpath, filename, dropdown_value)
             return render_template('uploaded_file.html', filename=filename)
-        else:
-            flash('Error: Unsupported file type')
-            return redirect(request.url)
+
+        flash('Error: Unsupported file type')
+        return redirect(request.url)
+
     return render_template('upload_file.html')
 
 # Function to redirect to the uploads page.
