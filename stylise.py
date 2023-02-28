@@ -24,28 +24,25 @@ def load_image(img_path):
 
 # Performs image stylisation takes the image path, the image name and style type as argument.
 def stylise(img_path, img_name, style_value):
-    # If statements to match style value from the dropdown box to the correlating art style.
-    if style_value == "1":
-        style_image = load_image('C:\\Users\\samue\\Desktop\\creativecomputinga1\\style_image\\Lichenstein.jpg')
-    if style_value == "2":
-        style_image = load_image('C:\\Users\\samue\\Desktop\\creativecomputinga1\\style_image\\Monet.jpg')
-    if style_value == "3":
-        style_image = load_image('C:\\Users\\samue\\Desktop\\creativecomputinga1\\style_image\\vangogh.jpg')
-    if style_value == "4":
-        style_image = load_image('C:\\Users\\samue\\Desktop\\creativecomputinga1\\style_image\\andywarhol.jpg')
-    if style_value == "5":
-        style_image = load_image('C:\\Users\\samue\\Desktop\\creativecomputinga1\\style_image\\davinci.jpg')
-    if style_value == "6":
-        style_image = load_image('C:\\Users\\samue\\Desktop\\creativecomputinga1\\style_image\\picasso.jpg')
-    if style_value == "7":
-        style_image = load_image('C:\\Users\\samue\\Desktop\\creativecomputinga1\\style_image\\salvadordali.jpg')
-    if style_value == "8":
-        style_image = load_image('C:\\Users\\samue\\Desktop\\creativecomputinga1\\style_image\\banksy.jpg')
+    # Define a dictionary to map style_value to corresponding image paths
+    styles = {
+        "1": "Lichenstein.jpg",
+        "2": "Monet.jpg",
+        "3": "vangogh.jpg",
+        "4": "andywarhol.jpg",
+        "5": "davinci.jpg",
+        "6": "picasso.jpg",
+        "7": "salvadordali.jpg",
+        "8": "banksy.jpg"
+    }
+
+    # Load content and style images
     content_image = load_image(img_path)
-    plt.imshow(np.squeeze(content_image))
+    style_image_path = os.path.join('C:\\Users\\amend\\this\\path\\style_image\\', styles.get(style_value))
+    style_image = load_image(style_image_path)
+
     # Perform neural transfer on image, write the image to the out_folder to be displayed in the uploads page.
     stylized_image = model(tf.constant(content_image), tf.constant(style_image))[0]
-    plt.imshow(np.squeeze(stylized_image))
-    cv2.imwrite(f'C:\\Users\\samue\\Desktop\\creativecomputinga1\\OUT_FOLDER\\{img_name}',
+    cv2.imwrite(f'C:\\Users\\amend\\this\\path\\OUT_FOLDER\\{img_name}',
                 cv2.cvtColor(np.squeeze(stylized_image) * 255, cv2.COLOR_BGR2RGB))
 
