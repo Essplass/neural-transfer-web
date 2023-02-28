@@ -5,9 +5,9 @@ A flask web app that performs neural style transfers on an uploaded image, devel
 - If you want to run this on your machine amend the OUTPUT and INPUT paths in stylise.py and app.py.
 
 Use:
-```pip install -r requirements.txt``` to download the project dependancies. 
+- ```pip install -r requirements.txt``` to download the project dependancies. 
 
-The deep learning model is loaded at runtime.
+- The deep learning model is loaded at runtime.
 
 # Demo images
 ![image](https://user-images.githubusercontent.com/71947295/221857278-04b5eab4-bdeb-4e48-8fb7-46633489e1a9.png)
