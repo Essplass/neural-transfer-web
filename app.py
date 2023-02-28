@@ -5,9 +5,9 @@ from stylise import *
 from globals import *
 
 # Instantiating the flask appliction and configuriating the templates folder
-app = Flask(__name__, template_folder="C:\\Users\\samue\\Desktop\\creativecomputinga1\\templates")
-app.config['UPLOAD_FOLDER'] = "C:\\Users\\samue\\Desktop\\creativecomputinga1\\UPLOAD_FOLDER"
-app.config['OUT_FOLDER'] = "C:\\Users\\samue\\Desktop\\creativecomputinga1\\OUT_FOLDER"
+app = Flask(__name__, template_folder="C:\\amend\\this\\path\\to\\templates")
+app.config['UPLOAD_FOLDER'] = "C:\\amend\\this\\path\\to\\UPLOAD_FOLDER"
+app.config['OUT_FOLDER'] = "C:\\amend\\this\\path\\to\\OUT_FOLDER"
 # Secret key is required for error handling and Flask Flash capabilities.
 app.secret_key = '1238972198372987fddsf'
 
