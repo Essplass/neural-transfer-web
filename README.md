@@ -2,7 +2,7 @@
 A flask web app that performs neural style transfers on an uploaded image, developed for localhost usage. 
 
 # Installation
-If you want to run this on your machine amend the OUTPUT and INPUT paths in stylise.py and app.py
+- If you want to run this on your machine amend the OUTPUT and INPUT paths in stylise.py and app.py.
 
 Use:
 ```pip install -r requirements.txt``` to download the project dependancies. 
