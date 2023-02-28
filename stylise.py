@@ -38,11 +38,11 @@ def stylise(img_path, img_name, style_value):
 
     # Load content and style images
     content_image = load_image(img_path)
-    style_image_path = os.path.join('C:\\Users\\amend\\this\\path\\style_image\\', styles.get(style_value))
+    style_image_path = os.path.join('C:\\amend\\this\\path\\to\\style_image\\', styles.get(style_value))
     style_image = load_image(style_image_path)
 
     # Perform neural transfer on image, write the image to the out_folder to be displayed in the uploads page.
     stylized_image = model(tf.constant(content_image), tf.constant(style_image))[0]
-    cv2.imwrite(f'C:\\Users\\amend\\this\\path\\OUT_FOLDER\\{img_name}',
+    cv2.imwrite(f'C:\\amend\\this\\path\\to\\OUT_FOLDER\\{img_name}',
                 cv2.cvtColor(np.squeeze(stylized_image) * 255, cv2.COLOR_BGR2RGB))
 
