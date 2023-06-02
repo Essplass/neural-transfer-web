@@ -9,7 +9,7 @@ app = Flask(__name__, template_folder="C:\\amend\\this\\path\\to\\templates")
 app.config['UPLOAD_FOLDER'] = "C:\\amend\\this\\path\\to\\UPLOAD_FOLDER"
 app.config['OUT_FOLDER'] = "C:\\amend\\this\\path\\to\\OUT_FOLDER"
 # Secret key is required for error handling and Flask Flash capabilities.
-app.secret_key = '1238972198372987fddsf'
+app.secret_key = 'putsecretkeyhere'
 
 
 # Function to check whether the uploaded file contains an allowed extension by splitting the last characters.
