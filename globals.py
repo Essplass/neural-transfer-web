@@ -1,1 +1,1 @@
-uploadpath = "C:\\Users\\samue\\Desktop\\creativecomputinga1\\UPLOAD_FOLDER"
+uploadpath = "Put the path to your upload folder here"
