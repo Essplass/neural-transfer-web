@@ -4,7 +4,7 @@ import os
 from stylise import *
 from globals import *
 
-# Instantiating the flask appliction and configuriating the templates folder
+# Instantiating the flask appliction and configuring the templates folder
 app = Flask(__name__, template_folder="C:\\amend\\this\\path\\to\\templates")
 app.config['UPLOAD_FOLDER'] = "C:\\amend\\this\\path\\to\\UPLOAD_FOLDER"
 app.config['OUT_FOLDER'] = "C:\\amend\\this\\path\\to\\OUT_FOLDER"
